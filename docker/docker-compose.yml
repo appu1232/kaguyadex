@@ -11,7 +11,7 @@ services:
     command: python3 -u docker/init.py
     volumes:
       - type: bind
-        source: ../
+        source: /home/pi/guyamoe
         target: /guya
     ports:
       - 8000:8000
