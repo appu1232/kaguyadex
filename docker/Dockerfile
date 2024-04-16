@@ -4,6 +4,7 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends \
     libpq-dev \
     gcc \
+    && pip install psycopg2 \
     && rm -rf /var/lib/apt/lists/*
 
 # Creates the directory for us
