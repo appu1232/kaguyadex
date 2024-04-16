@@ -1,6 +1,6 @@
 from guyamoe.settings.base import *
 
-ALLOWED_HOSTS = ["web", "localhost"]
+ALLOWED_HOSTS = ["web", "localhost", os.getenv('HOST_IP')]
 
 CACHES = {
     "default": {

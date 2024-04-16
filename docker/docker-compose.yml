@@ -8,7 +8,7 @@ services:
       # (Mostly) everything else is based off the
       # compose file's dir
       dockerfile: ./docker/Dockerfile
-    command: python -u docker/init.py
+    command: python3 -u docker/init.py
     volumes:
       - type: bind
         source: ../
@@ -17,6 +17,8 @@ services:
       - 8000:8000
     environment:
       - PYTHONUNBUFFERED=1
+      # Add the IP of the device you're hosting on below. Doing so will add your IP to ALLOWED_HOSTS.
+      - HOST_IP=
       - DJANGO_SETTINGS_MODULE=docker.settings
     depends_on:
       - memcached
