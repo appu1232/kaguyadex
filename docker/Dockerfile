@@ -1,11 +1,6 @@
-FROM python:3
+FROM python:3.9:bullseye
 
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
-    libpq-dev \
-    gcc \
-    && pip install psycopg2 \
-    && rm -rf /var/lib/apt/lists/*
+RUN python3 -m pip install --upgrade pip
 
 # Creates the directory for us
 WORKDIR /guya
